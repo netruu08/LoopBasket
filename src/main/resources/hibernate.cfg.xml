@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property> <!-- PostgreSQL JDBC driver -->
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/loopbasket_db</property> <!-- Database URL -->
+        <property name="hibernate.connection.username">postgres</property> <!-- Database username -->
+        <property name="hibernate.connection.password">123</property> <!-- Database password -->
+
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property> <!-- SQL dialect for PostgreSQL -->
+
+        <property name="hibernate.hbm2ddl.auto">update</property> 
+     
+        <property name="hibernate.current_session_context_class">thread</property> 
+
+        <property name="hibernate.connection.autocommit">true</property> 
+        
+       <mapping class="model.User"/>
+        <mapping class="model.Products"/>
+        <mapping class="model.Category"/>
+        <mapping class="model.Orders"/>
+        <mapping class="model.OrderItem"/>
+    </session-factory>
+</hibernate-configuration>
